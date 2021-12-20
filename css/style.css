@@ -44,13 +44,9 @@
     height: 100%;
 }
 
-
-
 .p-relative{
     position: relative;
 }
-
-
 
 /* inner-container */
 
@@ -60,6 +56,7 @@
     background-color: #eaeaea
     ;
     padding: 10px;
+    border-right: 1px solid grey;
 }
 
 .profile div {
@@ -99,6 +96,8 @@
 .notification a{
     font-size: 0.8em;
 }
+
+
 
 /* search */
 
@@ -143,3 +142,67 @@
     font-size: 0.7em;
 }
 
+/* width */
+
+.w-50 {
+    width: 140px;
+}
+
+/* user profile */
+
+ul {
+    height: 70%;
+    overflow: auto;
+}
+
+.user-profile {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color:#eaeaea ;
+}
+
+.user-profile > div {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile i {
+    color: grey;
+}
+
+.last-access{
+    font-size: 0.7em;
+    color:grey ;
+}
+
+/* body-messages */
+
+.body-messages {
+    background-image: url(../img/mine.jpg);
+    height:calc(90% - 60px);
+    overflow: auto;
+}
+
+.messages {
+    padding: 11px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#eaeaea ;
+    height: 10%;
+    
+}
+
+.messages i {
+    font-size: 2em;
+    color: grey;
+}
+
+.messages input {
+    width: 80%;
+    outline: none;
+    border:none;
+    padding: 10px 0;
+    border-radius: 10px;
+}

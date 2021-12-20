@@ -18,7 +18,7 @@
         <div class="head-container"></div>
         <div class="bottom-container"></div>
         <div id="app" class="inner-container">
-            <div class="inner-container-l w-30 h-100">
+            <div class="inner-container-l">
                 <div class="profile">
                     <div class="l-profile">
                         <img src="img/avatar_1.jpg" alt="">
@@ -45,11 +45,11 @@
                 </div>
                 <ul class="users">
                     <li v-for="(contact, index) in contacts" :key="index">
-                        <div>
+                        <div class="w-50">
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <div>
                                 <div>{{contact.name}}</div>
-                                 <div class="c-grey received">ok</div>  
+                                 <div class="c-grey received">{{contact.messages[0].text}}</div>  
                             </div>
                         </div>
                         <div class="c-grey">
@@ -59,7 +59,30 @@
 
                 </ul>
             </div>
-            <div class="inner-container-r"></div>
+            <div class="inner-container-r">
+                <div class="user-profile">
+                    <div>
+                        <img src="img/avatar_3.jpg" alt="">
+                        <div>
+                            <div>Samuele</div>
+                            <div class="last-access">ultimo accesso</div>
+                        </div>
+                    </div>
+                    <div class="c-grey">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="body-messages">
+                  
+                </div>
+                <div class="messages">
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="Scrivere un messaggio">
+                    <i class="fas fa-microphone"></i>
+                </div>
+            </div>
         </div>
 
         <script src="js/script.js"></script>
