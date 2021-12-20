@@ -49,11 +49,11 @@
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <div>
                                 <div>{{contact.name}}</div>
-                                 <div class="c-grey received">{{contact.messages[0].text}}</div>  
+                                 <div class="c-grey received">{{contact.messages[2].text}}</div>  
                             </div>
                         </div>
                         <div class="c-grey">
-                            {{contact.messages[0].date}}
+                            {{contact.messages[2].date}}
                         </div>
                     </li>
 
@@ -74,9 +74,12 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
-                <div class="body-messages">
-                  
-                </div>
+                <ul class="body-messages">
+                  <li :class="(message.status == 'received') ? 'send' : '' " v-for="(message, index) in contacts[0].messages" :key="index">
+                      <div> {{message.text}}</div>
+                      <div class="date">data a caso</div>
+                  </li>
+                </ul>
                 <div class="messages">
                     <i class="far fa-smile"></i>
                     <input type="text" placeholder="Scrivere un messaggio">
