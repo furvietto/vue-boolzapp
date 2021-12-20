@@ -73,11 +73,11 @@
     color: #b1b1b1;
 }
 
+
+/* notification */
 .c-grey i {
     padding-right: 10px;
 }
-
-/* notification */
 
 .notification {
     display: flex;
@@ -95,6 +95,32 @@
     color: #8edafc
     ;
 } 
+
+.notification a{
+    font-size: 0.8em;
+}
+
+/* search */
+
+.search {
+    padding: 5px;
+    background-color: #eaeaea
+    ;
+}
+
+.input {
+    background-color: white;
+    padding: 5px;
+    display: flex;
+}
+
+.input input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+/* users */
 
 
 
