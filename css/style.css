@@ -122,5 +122,24 @@
 
 /* users */
 
+.users li{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
 
+.users li:hover {
+    background-color: #e9ebeb
+    ;
+    cursor: pointer;
+}
+
+.users li > div {
+    display: flex;
+}
+
+.received {
+    font-size: 0.7em;
+}
 
