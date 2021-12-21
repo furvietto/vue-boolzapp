@@ -108,8 +108,10 @@ const project = new Vue({
            if (element.status == "received") {
              this.status.push(element.date)
            }
-           console.log(this.status);
          });
       }
+    },
+    created() {
+      this.status = [this.contacts[0].messages[this.contacts[0].messages.length - 1].date]
     },
 })
