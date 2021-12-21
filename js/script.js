@@ -103,15 +103,23 @@ const project = new Vue({
     methods: {
       change: function (index) {
          this.counter = index
-        this.status = []
-         this.contacts[this.counter].messages.forEach(element => {
-           if (element.status == "received") {
-             this.status.push(element.date)
-           }
-         });
+        // this.status = []
+        //  this.contacts[this.counter].messages.forEach(element => {
+        //    if (element.status == "received") {
+        //      this.status.push(element.date)
+        //    }
+        //  });
+      },
+
+      lastAccess: function (messages) {
+       let access= messages.filter((message) => {
+         return message.status == 'received'
+       })
+       let lunghezza = access.length - 1;
+       return access[lunghezza];
       }
     },
     created() {
-      this.status = [this.contacts[0].messages[this.contacts[0].messages.length - 1].date]
+      // this.status = [this.contacts[0].messages[this.contacts[0].messages.length - 1].date]
     },
 })

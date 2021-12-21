@@ -40,7 +40,7 @@
                 <div class="search c-grey">
                     <div class="input">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="cerca o inizia una nuova chat">
+                        <input  type="text" placeholder="cerca o inizia una nuova chat">
                     </div>
                 </div>
                 <ul class="users">
@@ -65,7 +65,7 @@
                         <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                         <div>
                             <div>{{contacts[counter].name}}</div>
-                            <div class="last-access">ultimo accesso alle {{status[status.length - 1]}}</div>
+                            <div class="last-access">ultimo accesso alle {{lastAccess(contacts[counter].messages).date}}</div>
                         </div>
                     </div>
                     <div class="c-grey">
