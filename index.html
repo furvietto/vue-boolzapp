@@ -77,7 +77,7 @@
                 <ul class="body-messages">
                   <li :class="(message.status == 'received') ? 'send' : '' " v-for="(message, index) in contacts[counter].messages" :key="index">
                       <div> {{message.text}}</div>
-                      <div class="date">data a caso</div>
+                      <div class="date">{{message.date}}</div>
                   </li>
                 </ul>
                 <div class="messages">
