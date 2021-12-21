@@ -60,12 +60,12 @@
                 </ul>
             </div>
             <div class="inner-container-r">
-                <div class="user-profile">
+                <div  class="user-profile">
                     <div>
-                        <img src="img/avatar_3.jpg" alt="">
+                        <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                         <div>
-                            <div>Samuele</div>
-                            <div class="last-access">ultimo accesso</div>
+                            <div>{{contacts[counter].name}}</div>
+                            <div class="last-access">{{contacts[counter].messages[contacts[counter].messages.length - 1].date}}</div>
                         </div>
                     </div>
                     <div class="c-grey">
