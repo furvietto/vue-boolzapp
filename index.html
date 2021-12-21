@@ -44,16 +44,16 @@
                     </div>
                 </div>
                 <ul class="users">
-                    <li v-for="(contact, index) in contacts" :key="index">
+                    <li @click="change(index)" v-for="(contact, index) in contacts" :key="index">
                         <div class="w-50">
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <div>
                                 <div>{{contact.name}}</div>
-                                 <div class="c-grey received">{{contact.messages[2].text}}</div>  
+                                 <div class="c-grey received">{{contact.messages[contact.messages.length - 1].text}}</div>  
                             </div>
                         </div>
                         <div class="c-grey">
-                            {{contact.messages[2].date}}
+                            {{contact.messages[contact.messages.length - 1].date}}
                         </div>
                     </li>
 
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <ul class="body-messages">
-                  <li :class="(message.status == 'received') ? 'send' : '' " v-for="(message, index) in contacts[0].messages" :key="index">
+                  <li :class="(message.status == 'received') ? 'send' : '' " v-for="(message, index) in contacts[counter].messages" :key="index">
                       <div> {{message.text}}</div>
                       <div class="date">data a caso</div>
                   </li>
