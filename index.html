@@ -45,11 +45,11 @@
                 <div class="search c-grey">
                     <div class="input">
                         <i class="fas fa-search"></i>
-                        <input  type="text" placeholder="cerca o inizia una nuova chat">
+                        <input @keyup="searchFilter" v-model="filter" type="text" placeholder="cerca o inizia una nuova chat">
                     </div>
                 </div>
                 <ul class="users">
-                    <li @click="change(index)" v-for="(contact, index) in contacts" :key="index">
+                    <li v-if="contact.visible == true" @click="change(index)" v-for="(contact, index) in contacts" :key="index">
                         <div class="w-50">
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <div>

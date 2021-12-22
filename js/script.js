@@ -5,6 +5,7 @@ const project = new Vue({
     data:{
         counter: 0,
         addSend: "",
+        filter: "",
         contacts: [
             {
               name: "Michele",
@@ -127,9 +128,23 @@ const project = new Vue({
           }, 2000);
         }
       },
-      
+
+      searchFilter: function () {
+        this.contacts.forEach(element => {
+          if (element.name.toLowerCase().includes(this.filter.toLowerCase())) {
+            element.visible = true
+          } else {
+            element.visible = false
+          }
+        })
+      }
+
     },
+    
+    
+
     created() {
      
     },
+
 })
