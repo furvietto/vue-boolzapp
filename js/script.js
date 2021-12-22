@@ -1,17 +1,10 @@
-// L’esercizio si svolgerà in 3 giorni + alcune milestone e bonus per le vacanze.
-// Milestone 1
-// Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-// Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
-
-// Milestone 2
-// Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-// Click sul contatto mostra la conversazione del contatto cliccato
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 const project = new Vue({
     el:"#app",
     data:{
         counter: 0,
-        status:[],
+        addSend: "",
         contacts: [
             {
               name: "Michele",
@@ -103,12 +96,6 @@ const project = new Vue({
     methods: {
       change: function (index) {
          this.counter = index
-        // this.status = []
-        //  this.contacts[this.counter].messages.forEach(element => {
-        //    if (element.status == "received") {
-        //      this.status.push(element.date)
-        //    }
-        //  });
       },
 
       lastAccess: function (messages) {
@@ -117,9 +104,32 @@ const project = new Vue({
        })
        let lunghezza = access.length - 1;
        return access[lunghezza];
-      }
+      },
+
+      send: function () {
+        dayjs.extend(window.dayjs_plugin_customParseFormat);
+        let data = dayjs().format("D/M/YYYY HH:mm:ss");
+
+        if (this.addSend != '') {
+          this.contacts[this.counter].messages.push({
+            date: data,
+            text: this.addSend,
+            status: "sent",
+          })
+          this.addSend = "";
+
+          setTimeout(() => {
+            this.contacts[this.counter].messages.push({
+              date: data,
+              text: "ok",
+              status: "received",
+            })
+          }, 2000);
+        }
+      },
+      
     },
     created() {
-      // this.status = [this.contacts[0].messages[this.contacts[0].messages.length - 1].date]
+     
     },
 })

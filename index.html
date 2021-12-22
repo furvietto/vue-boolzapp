@@ -9,6 +9,11 @@
     integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <!-- script per dayjs -->
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
+  <script src="https://unpkg.com/dayjs@1.8.20/plugin/customParseFormat.js"></script>
+  <!-- script per dayjs -->
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
@@ -82,7 +87,7 @@
                 </ul>
                 <div class="messages">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivere un messaggio">
+                    <input @keyup.enter="send" v-model="addSend" type="text" placeholder="Scrivere un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
