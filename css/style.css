@@ -193,14 +193,35 @@ body {
 }
 
 .body-messages li {
+    
     padding: 10px;
     background-color: white;
     width: 30%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
+
+.down {
+    position: relative;
+}
+
+.down .appear {
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    background-color: azure;
+    width: 100%;
+    border-radius: 5px;
+    line-height: 25px;
+}
+
+
+.down .appear div:hover {
+    background-color: brown;
+    cursor: pointer;
+} 
 
 .body-messages .send {
     align-self: flex-end;

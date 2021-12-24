@@ -83,6 +83,13 @@
                   <li :class="(message.status == 'sent') ? 'send' : '' " v-for="(message, index) in contacts[counter].messages" :key="index">
                       <div> {{message.text}}</div>
                       <div class="date">{{message.date}}</div>
+                      <div class="down">
+                          <i @click="message.condition = !message.condition" class="fas fa-chevron-down"></i>
+                          <div v-show="message.condition" class="appear">
+                              <div>Message info</div>
+                              <div @click="deleteMessages(index)">Delete Message</div>
+                          </div>
+                    </div>
                   </li>
                 </ul>
                 <div class="messages">
