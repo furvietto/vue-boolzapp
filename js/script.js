@@ -6,6 +6,9 @@ const project = new Vue({
         counter: 0,
         addSend: "",
         filter: "",
+        casualPhrases:[
+          "ok","wow","spettacolare","magnifico","non ci credo"
+        ],
         contacts: [
             {
               name: "Michele",
@@ -121,7 +124,9 @@ const project = new Vue({
       send: function () {
         dayjs.extend(window.dayjs_plugin_customParseFormat);
         let data = dayjs().format("D/M/YYYY HH:mm:ss");
-        let send = this.addSend.trim()
+        let send = this.addSend.trim();
+        let casualLength = this.casualPhrases.length 
+        let casual = Math.floor(Math.random() * casualLength);
 
         if (send != '') {
           this.contacts[this.counter].messages.push({
@@ -135,7 +140,7 @@ const project = new Vue({
           setTimeout(() => {
             this.contacts[this.counter].messages.push({
               date: data,
-              text: "ok",
+              text: this.casualPhrases[casual],
               status: "received",
               condition: false,
             })

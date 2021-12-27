@@ -95,7 +95,8 @@
                 <div class="messages">
                     <i class="far fa-smile"></i>
                     <input @keyup.enter="send" v-model="addSend" type="text" placeholder="Scrivere un messaggio">
-                    <i class="fas fa-microphone"></i>
+                    <i v-if="addSend == '' " class="fas fa-microphone"></i>
+                    <i @click="send" v-if="addSend != '' " class="fas fa-paper-plane"></i>
                 </div>
             </div>
         </div>
