@@ -121,11 +121,12 @@ const project = new Vue({
       send: function () {
         dayjs.extend(window.dayjs_plugin_customParseFormat);
         let data = dayjs().format("D/M/YYYY HH:mm:ss");
+        let send = this.addSend.trim()
 
-        if (this.addSend != '') {
+        if (send != '') {
           this.contacts[this.counter].messages.push({
             date: data,
-            text: this.addSend,
+            text: send,
             status: "sent",
             condition: false,
           })
