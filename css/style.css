@@ -181,6 +181,17 @@ body {
     color:grey ;
 }
 
+.online {
+    padding-right: 20px;
+    color: green;
+}
+
+.online i {
+    color: green;
+}
+
+
+
 /* body-messages */
 
 .body-messages {

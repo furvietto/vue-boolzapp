@@ -3,6 +3,8 @@
 const project = new Vue({
     el:"#app",
     data:{
+        isOnline: false,
+        isTexting: false,
         counter: 0,
         addSend: "",
         filter: "",
@@ -136,14 +138,23 @@ const project = new Vue({
             condition: false,
           })
           this.addSend = "";
+          
 
           setTimeout(() => {
-            this.contacts[this.counter].messages.push({
-              date: data,
-              text: this.casualPhrases[casual],
-              status: "received",
-              condition: false,
-            })
+            this.isTexting = true
+            this.isOnline = true
+            setTimeout(() => {
+              this.contacts[this.counter].messages.push({
+                date: data,
+                text: this.casualPhrases[casual],
+                status: "received",
+                condition: false,
+              })
+              this.isTexting = false
+              setTimeout(() => {
+                this.isOnline = false
+              }, 3000);
+            }, 4000);
           }, 2000);
         }
       },

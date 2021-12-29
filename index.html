@@ -54,10 +54,10 @@
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <div>
                                 <div>{{contact.name}}</div>
-                                 <div class="c-grey received">{{contact.messages[contact.messages.length - 1].text}}</div>  
+                                 <div v-if="contact.messages[contact.messages.length - 1] != null" class="c-grey received">{{contact.messages[contact.messages.length - 1].text}}</div>  
                             </div>
                         </div>
-                        <div class="c-grey">
+                        <div class="c-grey" v-if="contact.messages[contact.messages.length - 1] != null">
                             {{contact.messages[contact.messages.length - 1].date}}
                         </div>
                     </li>
@@ -70,10 +70,16 @@
                         <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                         <div>
                             <div>{{contacts[counter].name}}</div>
-                            <div  class="last-access">ultimo accesso alle {{lastAccess(contacts[counter].messages).date}}</div>
+                            <div v-if="lastAccess(contacts[counter].messages) != null " class="last-access">ultimo accesso alle {{lastAccess(contacts[counter].messages).date}}
+                            </div>
+                            <span v-show="isTexting">...sta scrivendo</span>
                         </div>
                     </div>
                     <div class="c-grey">
+                        <div v-if="isOnline" class="online">
+                            <i class="far fa-dot-circle"></i>
+                            online
+                        </div>
                         <i class="fas fa-search"></i>
                         <i class="fas fa-paperclip"></i>
                         <i class="fas fa-ellipsis-v"></i>
