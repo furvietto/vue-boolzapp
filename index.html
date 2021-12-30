@@ -32,7 +32,7 @@
                     <div class="c-grey">
                         <i class="fas fa-redo"></i>
                         <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                        <i  class="fas fa-ellipsis-v"></i>
                     </div>
                 </div>
                 <div class="notification">
@@ -75,14 +75,18 @@
                             <span v-show="isTexting">...sta scrivendo</span>
                         </div>
                     </div>
-                    <div class="c-grey">
+                    <div class="head-profile c-grey">
                         <div v-if="isOnline" class="online">
                             <i class="far fa-dot-circle"></i>
                             online
                         </div>
                         <i class="fas fa-search"></i>
                         <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                        <i @click="appear" class="fas fa-ellipsis-v"></i>
+                        <div v-show="isClicked" class="deleteAll">
+                            <div @click="deleteAllMessages">elimina messaggi</div>
+                            <div @click="deleteUser">elimina utente</div>
+                        </div>
                     </div>
                 </div>
                 <ul class="body-messages">

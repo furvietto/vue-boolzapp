@@ -5,6 +5,7 @@ const project = new Vue({
     data:{
         isOnline: false,
         isTexting: false,
+        isClicked: false,
         counter: 0,
         addSend: "",
         filter: "",
@@ -172,6 +173,18 @@ const project = new Vue({
       deleteMessages: function (index) {
         this.contacts[this.counter].messages.splice(index , 1)
       },
+
+      appear: function () {
+        this.isClicked = !this.isClicked
+      },
+
+      deleteAllMessages: function () {
+        this.contacts[this.counter].messages = []
+      },
+
+      deleteUser: function () {
+        this.contacts.splice(this.counter, 1)
+      }
 
     },
     

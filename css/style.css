@@ -64,9 +64,27 @@ body {
     border-right: 1px solid grey;
 }
 
-.profile div {
+.profile > div {
     display: flex;
     align-items: center;
+}
+
+/* head-profile */
+
+.head-profile .deleteAll {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    color: black;
+}
+
+.head-profile .deleteAll > div {
+    background-color: white;
+}
+
+.head-profile .deleteAll > div:hover {
+    background-color: violet;
+    cursor: pointer;
 }
 
 /* color */
