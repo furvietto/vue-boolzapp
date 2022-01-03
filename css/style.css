@@ -258,6 +258,10 @@ body {
     position: relative;
 }
 
+.down i {
+    cursor: pointer;
+}
+
 .down .appear {
     position: absolute;
     top: 30px;

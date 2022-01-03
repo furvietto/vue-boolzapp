@@ -26,7 +26,7 @@
             <div v-if="isChoice"  class="welcome">
                 <div class="inner-welcome">
                         <h2 class="title">
-                            Benvenuto scegli con chi vuoi parlare
+                            Benvenuto : scegli con chi vuoi parlare
                         </h2>
                         <ul class="users">
                             <li v-if="contact.visible == true" @click="change(index)" v-for="(contact, index) in contacts" :key="index">
@@ -90,7 +90,7 @@
                         <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                         <div>
                             <div>{{contacts[counter].name}}</div>
-                            <div v-if="lastAccess(contacts[counter].messages) != null " class="last-access">ultimo accesso alle {{lastAccess(contacts[counter].messages).date}}
+                            <div v-if="lastAccess(contacts[counter].messages) != null" class="last-access">ultimo accesso alle {{lastAccess(contacts[counter].messages).date}}
                             </div>
                             <span v-show="isTexting">...sta scrivendo</span>
                         </div>
