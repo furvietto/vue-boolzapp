@@ -6,6 +6,7 @@ const project = new Vue({
         isOnline: false,
         isTexting: false,
         isClicked: false,
+        isChoice: true,
         counter: 0,
         addSend: "",
         filter: "",
@@ -114,6 +115,7 @@ const project = new Vue({
     methods: {
       change: function (index) {
          this.counter = index
+         this.isChoice = false
       },
 
       lastAccess: function (messages) {
@@ -177,7 +179,7 @@ const project = new Vue({
       appear: function () {
         this.isClicked = !this.isClicked
       },
-
+      
       deleteAllMessages: function () {
         this.contacts[this.counter].messages = []
       },
@@ -188,8 +190,6 @@ const project = new Vue({
 
     },
     
-    
-
     created() {
      
     },

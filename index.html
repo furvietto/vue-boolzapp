@@ -23,6 +23,27 @@
         <div class="head-container"></div>
         <div class="bottom-container"></div>
         <div id="app" class="inner-container">
+            <div v-if="isChoice"  class="welcome">
+                <div class="inner-welcome">
+                        <h2 class="title">
+                            Benvenuto scegli con chi vuoi parlare
+                        </h2>
+                        <ul class="users">
+                            <li v-if="contact.visible == true" @click="change(index)" v-for="(contact, index) in contacts" :key="index">
+                                <div class="w-50">
+                                    <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                                    <div>
+                                        <div>{{contact.name}}</div>
+                                         <div v-if="contact.messages[contact.messages.length - 1] != null" class="c-grey received">{{contact.messages[contact.messages.length - 1].text}}</div>  
+                                    </div>
+                                </div>
+                                <div class="c-grey" v-if="contact.messages[contact.messages.length - 1] != null">
+                                    {{contact.messages[contact.messages.length - 1].date}}
+                                </div>
+                            </li>
+                        </ul>
+                </div>
+            </div>
             <div class="inner-container-l">
                 <div class="profile">
                     <div class="l-profile">
@@ -61,12 +82,11 @@
                             {{contact.messages[contact.messages.length - 1].date}}
                         </div>
                     </li>
-
                 </ul>
             </div>
             <div class="inner-container-r">
                 <div  class="user-profile">
-                    <div>
+                    <div >
                         <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                         <div>
                             <div>{{contacts[counter].name}}</div>
