@@ -114,8 +114,10 @@ const project = new Vue({
     },
     methods: {
       change: function (index) {
-         this.counter = index
-         this.isChoice = false
+        this.counter = index
+        this.isChoice = false
+        this.contacts[index].border = !this.contacts[index].border
+        
       },
 
       lastAccess: function (messages) {

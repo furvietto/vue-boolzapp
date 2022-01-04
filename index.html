@@ -19,10 +19,10 @@
 </head>
 
 <body>
-    <div class="p-relative">
+    <div id="app" class="p-relative">
         <div class="head-container"></div>
         <div class="bottom-container"></div>
-        <div id="app" class="inner-container">
+        <div class="inner-container">
             <div v-if="isChoice"  class="welcome">
                 <div class="inner-welcome">
                         <h2 class="title">
@@ -70,7 +70,11 @@
                     </div>
                 </div>
                 <ul class="users">
-                    <li v-if="contact.visible == true" @click="change(index)" v-for="(contact, index) in contacts" :key="index">
+                    <li 
+                    :class="counter == index ? 'border' : '' "
+                   v-if="contact.visible == true" 
+                    @click="change(index)" 
+                    v-for="(contact, index) in contacts" :key="index">
                         <div class="w-50">
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <div>
