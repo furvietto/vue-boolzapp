@@ -7,6 +7,7 @@ const project = new Vue({
         isTexting: false,
         isClicked: false,
         isChoice: true,
+        isHidden: true, 
         counter: 0,
         addSend: "",
         filter: "",
@@ -188,12 +189,29 @@ const project = new Vue({
 
       deleteUser: function () {
         this.contacts.splice(this.counter, 1)
-      }
+      },
 
+      ciao: function () {
+        if (this.isHidden == true) {
+          return 'hidden'
+        } else if (this.hidden == false) {
+          
+        }
+      },
+
+      makeAppear: function () {
+        setTimeout(() => {
+          let splash = document.querySelector(".splash-page")
+          splash.classList.add("hidden")
+          setTimeout(() => {
+            splash.classList.add("d-none")
+          }, 2000);
+        }, 3000);
+      }
     },
     
     created() {
-     
+      this.makeAppear()
     },
 
 })
