@@ -8,6 +8,7 @@ body {
     min-width: 1200px;
 }
 
+/* spash page */
 .splash-page {
     position: absolute;
     width: 100%;
@@ -36,18 +37,21 @@ h1{
     padding-bottom: 1em;
 }
 
+/* head container */
 .head-container {
     height: 20vh;
     background-color: #009688
     ;
 }
 
+/* bottom container */
 .bottom-container {
     height: 80vh;
     background-color: #d9dbd6
     ;
 }
 
+/* welcome */
 .welcome {
     position: absolute;
     height: 100%;
@@ -60,6 +64,7 @@ h1{
     align-items: center;
 }
 
+/* inner welcome */
 .inner-welcome {
     background-color: white;
     width: 50%;
@@ -70,6 +75,7 @@ h1{
     text-align: center;
 }
 
+/* inner container */
 .inner-container {
     position: absolute;
     top: 50%;
@@ -103,7 +109,7 @@ h1{
     position: relative;
 }
 
-/* inner-container */
+/*profile  */
 
 .profile {
     display: flex;
@@ -248,6 +254,9 @@ h1{
     color: grey;
 }
 
+
+/* last access */
+
 .last-access{
     font-size: 0.7em;
     color:grey ;
@@ -286,6 +295,8 @@ h1{
     margin-bottom: 60px;
 }
 
+/* down */
+
 .down {
     position: relative;
 }
@@ -310,6 +321,8 @@ h1{
     cursor: pointer;
 } 
 
+/* body messages */
+
 .body-messages .send {
     align-self: flex-end;
     background-color: chartreuse;
@@ -319,6 +332,8 @@ h1{
     font-size: 0.8em;
     align-self: flex-end;
 }
+
+/* messages */
 
 .messages {
     padding: 11px;
