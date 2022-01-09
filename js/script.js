@@ -3,11 +3,11 @@
 const project = new Vue({
   el: "#app",
   data: {
-    isOnline: false,
-    isTexting: false,
-    isClicked: false,
-    isChoice: true,
-    isHidden: true,
+    isOnline: false, //fa apparire il pallino dell'online
+    isTexting: false, // fa apparire la scritta 'sta scrivendo ...'
+    isClicked: false, //fa apparire la schermata elimina utente o elimina tutti i messaggi
+    isChoice: true, // all'inizio della scelta utente, una volta scelto si attiva il v-if cosi che la schermata scompare
+    isLight: true,
     counter: 0,
     addSend: "",
     filter: "",
@@ -108,7 +108,6 @@ const project = new Vue({
             status: "received",
             condition: false,
           },
-
         ],
       },
     ],
@@ -219,8 +218,15 @@ const project = new Vue({
           splash.classList.add("d-none")
         }, 2000);
       }, 2000);
+    },
+
+    lightDark: function () {
+      this.isLight = !this.isLight
     }
+
   },
+
+  
 
   created() {
     this.makeAppear()

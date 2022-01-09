@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div id="app" class="p-relative">
+    <div id="app" class="p-relative" :class="isLight == true ? 'light-theme' : 'dark-theme'">
         <div class="splash-page">
             <div>
                 <h1>BENVENUTO SU VAZZAPP</h1>
@@ -79,6 +79,14 @@
                         <span>Fulvio</span>
                     </div>
                     <div class="c-grey">
+                        <span v-if="isLight == true">light</span>
+                        <span v-else>dark</span>
+                        <label class="switch">
+                            <div>
+                              <input @click="lightDark" type="checkbox" />
+                              <span class="slider round"></span>
+                            </div>
+                          </label> 
                         <i class="fas fa-redo"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
