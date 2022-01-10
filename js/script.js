@@ -143,8 +143,10 @@ const project = new Vue({
       let casualLength = this.casualPhrases.length
       let casual = Math.floor(Math.random() * casualLength);
 
+      let counter = this.counter
+
       if (send != '') {
-        this.contacts[this.counter].messages.push({
+        this.contacts[counter].messages.push({
           date: data,
           text: send,
           status: "sent",
@@ -157,7 +159,7 @@ const project = new Vue({
           this.isTexting = true
           this.isOnline = true
           setTimeout(() => {
-            this.contacts[this.counter].messages.push({
+            this.contacts[counter].messages.push({
               date: data,
               text: this.casualPhrases[casual],
               status: "received",
