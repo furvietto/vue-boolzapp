@@ -154,20 +154,20 @@
                             <div v-if="lastAccess(contacts[counter].messages) != null" class="last-access">ultimo
                                 accesso alle {{lastAccess(contacts[counter].messages).date}}
                             </div>
-                            <span v-show="isTexting">...sta scrivendo</span>
+                            <span v-show="contacts[counter].isTexting">...sta scrivendo</span>
                         </div>
                     </div>
 
                     <!-- head profile -->
 
                     <div class="head-profile c-grey">
-                        <div v-if="isOnline" class="online">
+                        <div v-if="contacts[counter].isOnline" class="online">
                             <i class="far fa-dot-circle"></i>
                             online
                         </div>
                         <i class="fas fa-search"></i>
                         <i class="fas fa-paperclip"></i>
-                        <i @click="appear" class="fas fa-ellipsis-v"></i>
+                        <i @click="appear" class="cursor-p fas fa-ellipsis-v"></i>
                         <div v-show="isClicked" class="deleteAll">
                             <div @click="deleteAllMessages">elimina messaggi</div>
                             <div @click="deleteUser">elimina utente</div>

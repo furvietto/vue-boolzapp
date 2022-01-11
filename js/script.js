@@ -3,8 +3,6 @@
 const project = new Vue({
   el: "#app",
   data: {
-    isOnline: false, //fa apparire il pallino dell'online
-    isTexting: false, // fa apparire la scritta 'sta scrivendo ...'
     isClicked: false, //fa apparire la schermata elimina utente o elimina tutti i messaggi
     isChoice: true, // all'inizio della scelta utente, una volta scelto si attiva il v-if cosi che la schermata scompare
     isLight: true,
@@ -19,6 +17,8 @@ const project = new Vue({
         name: "Michele",
         avatar: "_1",
         visible: true,
+        isTexting: false, // fa apparire la scritta 'sta scrivendo ...'
+        isOnline: false, //fa apparire il pallino dell'online
         messages: [
           {
             date: "10/01/2020 15:30:55",
@@ -44,6 +44,8 @@ const project = new Vue({
         name: "Fabio",
         avatar: "_2",
         visible: true,
+        isTexting: false, // fa apparire la scritta 'sta scrivendo ...'
+        isOnline: false, //fa apparire il pallino dell'online
         messages: [
           {
             date: "20/03/2020 16:30:00",
@@ -70,6 +72,8 @@ const project = new Vue({
         name: "Samuele",
         avatar: "_3",
         visible: true,
+        isTexting: false, // fa apparire la scritta 'sta scrivendo ...'
+        isOnline: false, //fa apparire il pallino dell'online
         messages: [
           {
             date: "28/03/2020 10:10:40",
@@ -95,6 +99,8 @@ const project = new Vue({
         name: "Luisa",
         avatar: "_4",
         visible: true,
+        isTexting: false, // fa apparire la scritta 'sta scrivendo ...'
+        isOnline: false, //fa apparire il pallino dell'online
         messages: [
           {
             date: "10/01/2020 15:30:55",
@@ -156,8 +162,8 @@ const project = new Vue({
 
 
         setTimeout(() => {
-          this.isTexting = true
-          this.isOnline = true
+          this.contacts[counter].isTexting = true
+          this.contacts[counter].isOnline = true
           setTimeout(() => {
             this.contacts[counter].messages.push({
               date: data,
@@ -165,9 +171,9 @@ const project = new Vue({
               status: "received",
               condition: false,
             })
-            this.isTexting = false
+            this.contacts[counter].isTexting = false
             setTimeout(() => {
-              this.isOnline = false
+              this.contacts[counter].isOnline = false
             }, 3000);
           }, 4000);
         }, 2000);
